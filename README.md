@@ -12,7 +12,7 @@ Make sure you have cloned my project branch with the '--branch'.
 Also, need to get all submodules so don't forget the option '--recursive'.
 
 ```
-git clone --branch ESP32-S3-Devkit-C --recursive git@github.com:0015/esp-skainet.git
+git clone --branch ESP32-S3-Devkit-C --recursive https://github.com/Bariest/speech_recognition.git
 ```
 
 ### Example that can be operated in ESP32-DevKit-C and INMP441 
