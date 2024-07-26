@@ -1,10 +1,4 @@
-/*
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
 
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "freertos/FreeRTOS.h"
@@ -102,7 +96,7 @@ void detect_Task(void *arg)
             // afe_handle->disable_aec(afe_data);
         }
 
-        if (detect_flag == 1) {
+        if (detect_flag >= 1) {
             esp_mn_state_t mn_state = multinet->detect(model_data, res->data);
 
             if (mn_state == ESP_MN_STATE_DETECTING) {
@@ -115,17 +109,33 @@ void detect_Task(void *arg)
                     printf("TOP %d, command_id: %d, phrase_id: %d, string: %s, prob: %f\n", 
                     i+1, mn_result->command_id[i], mn_result->phrase_id[i], mn_result->string, mn_result->prob[i]);
                 }
-                printf("-----------listening-----------\n");
+                if(mn_result->num > 0){
+                    switch(mn_result->command_id[0])
+                    {
+                    case 32: // Assume ID0 corresponds to 'turn on light'
+                        printf("Hello world\n");
+                        break;
+                    case 33:
+                        printf("Making word\n");
+                        break;
+                    case 35:
+                        printf("mandarin\n");
+                        break;
+                    case 34:
+                        esp_mn_results_t *mn_result = multinet->get_results(model_data);
+                        printf("timeout, string:%s\n", mn_result->string);
+                        afe_handle->enable_wakenet(afe_data);
+                        detect_flag = 0;
+                        printf("\n-----------awaits to be waken up-----------\n");
+                        continue;
+                    default:
+                        break;
+
+                    }
+                }
+                 printf("-----------listening-----------\n");
             }
 
-            if (mn_state == ESP_MN_STATE_TIMEOUT) {
-                esp_mn_results_t *mn_result = multinet->get_results(model_data);
-                printf("timeout, string:%s\n", mn_result->string);
-                afe_handle->enable_wakenet(afe_data);
-                detect_flag = 0;
-                printf("\n-----------awaits to be waken up-----------\n");
-                continue;
-            }
         }
     }
     if (model_data) {
