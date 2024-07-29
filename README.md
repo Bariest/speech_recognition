@@ -26,15 +26,22 @@ cd esp-skainet/components/hardware_driver/boards/include
 Open the file, 'esp32_s3_devkit_c.h'
 ```
 #define FUNC_I2S_EN         (1)
-#define GPIO_I2S_LRCK       (GPIO_NUM_11) (WS)
-#define GPIO_I2S_MCLK       (GPIO_NUM_NC)-->GND (L/R)
-#define GPIO_I2S_SCLK       (GPIO_NUM_12) (SCK)
-#define GPIO_I2S_SDIN       (GPIO_NUM_10) (SD)
-#define GPIO_I2S_DOUT       (GPIO_NUM_NC)-->GND (GND)
+#define GPIO_I2S_LRCK       (GPIO_NUM_11) 
+#define GPIO_I2S_MCLK       (GPIO_NUM_NC)
+#define GPIO_I2S_SCLK       (GPIO_NUM_12)
+#define GPIO_I2S_SDIN       (GPIO_NUM_10) 
+#define GPIO_I2S_DOUT       (GPIO_NUM_NC)
 ``` 
+For The Hardware cable
+```
+WS ---> 11
+L/R ---> GND
+SCK ---> 12
+SD ---> 10
+GND ---> GND
+VDD ---> 3V3
 
-Modify them for your system.
-
+```
 
 2. Navigate to one example folder 'esp-skainet/examples/en_speech_commands_recognition'.
 ```
