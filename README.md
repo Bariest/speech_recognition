@@ -4,7 +4,7 @@
 
 ### Pre-requisite
 
-Now this project runs on IDF version 5.x.
+Now this project runs on IDF version 5.x. So install The esp-idf version 5.x
 
 ### ESP-Skainet
 
@@ -52,10 +52,43 @@ Audio hardware board
 4. Build and flash the project.
 ```
 idf.py build
-idf.py flash monitor
+idf.py flash monitor or idf.py -p com.... flash monitor(com from device manager check port)
 ```
-
+(if you want to exit the monitor press "ctrl + ]")
 5. Advanced users can add or modify speech commands by using the `idf.py menuconfig` command. 
 ```
 idf.py menuconfig
 ```
+Customize the sound from ESP Speech Recognition to customize the wake word
+
+7. To custom or add a new word go back to C:\Espressif\frameworks\esp-idf-v5.2.2\esp-skainet\components\esp-sr\tool
+```
+pip install g2p_en
+pip install numpy 
+pip install pandas
+python multinet_g2p.py -t "...." (... = English words that you want to add)
+```
+![image](https://github.com/user-attachments/assets/846da345-53b4-4f82-8bd9-3a6cc4191145)
+copy the output for example on this attachment is hcLb WkD
+8. go to C:\Espressif\frameworks\esp-idf-v5.2.2\esp-skainet\examples\en_speech_commands_recognition>
+```
+idf.py fullclean
+code .
+```
+Inside the code 
+Right-click sdkconfig --> the click SDK configuration editor
+go to add English speech paste in new ID such as INSIDE ID 36..... then save
+go to main.c
+![image](https://github.com/user-attachments/assets/fec3f6f2-e560-4774-a758-f7bff96bb951)
+add case 36
+save 
+try to run again
+```
+idf.py clean
+idf.py build
+idf.py flash monitor or idf.py -p com.... flash monitor(com from device manager check port)
+
+```
+Try to speak
+
+
