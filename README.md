@@ -27,10 +27,10 @@ Open the file, 'esp32_s3_devkit_c.h'
 ```
 #define FUNC_I2S_EN         (1)
 #define GPIO_I2S_LRCK       (GPIO_NUM_11) (WS)
-#define GPIO_I2S_MCLK       (GPIO_NUM_NC) 
+#define GPIO_I2S_MCLK       (GPIO_NUM_NC)-->GND (L/R)
 #define GPIO_I2S_SCLK       (GPIO_NUM_12) (SCK)
 #define GPIO_I2S_SDIN       (GPIO_NUM_10) (SD)
-#define GPIO_I2S_DOUT       (GPIO_NUM_NC)
+#define GPIO_I2S_DOUT       (GPIO_NUM_NC)-->GND (GND)
 ``` 
 
 Modify them for your system.
