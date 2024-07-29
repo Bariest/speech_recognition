@@ -1,5 +1,5 @@
-# [Note] This branch has some modifications to make it work on the Generic board, ESP32-S3-Devkit-C and INMP441 mems microphone.
-  
+# This branch has some modifications to make it work on the Generic board, ESP32-S3-Devkit-C and INMP441 mems microphone.
+   
 ## Quick Start with ESP-Skainet for Generic ESP32-S3 DevKit-C 
 
 ### Pre-requisite
