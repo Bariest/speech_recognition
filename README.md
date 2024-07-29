@@ -85,8 +85,11 @@ idf.py fullclean
 code .
 ```
 Inside the code 
+
 Right-click sdkconfig --> the click SDK configuration editor
+
 go to add English speech paste in new ID such as INSIDE ID 36..... then save
+
 go to main.c
 ![image](https://github.com/user-attachments/assets/fec3f6f2-e560-4774-a758-f7bff96bb951)
 add case 36
