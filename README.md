@@ -4,7 +4,7 @@
 
 ### Pre-requisite
 
-Now this project runs on IDF version 5.x. So install The esp-idf version 5.x
+Now this project runs on IDF version 5.x. So install The esp-idf version 5.x from website (https://dl.espressif.com/dl/esp-idf/?idf=4.4) for windows
 
 ### ESP-Skainet
 
