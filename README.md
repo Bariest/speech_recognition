@@ -55,6 +55,7 @@ idf.py build
 idf.py flash monitor or idf.py -p com.... flash monitor(com from device manager check port)
 ```
 (if you want to exit the monitor press "ctrl + ]")
+
 5. Advanced users can add or modify speech commands by using the `idf.py menuconfig` command. 
 ```
 idf.py menuconfig
