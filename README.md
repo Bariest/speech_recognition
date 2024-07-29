@@ -71,6 +71,7 @@ python multinet_g2p.py -t "...." (... = English words that you want to add)
 ```
 ![image](https://github.com/user-attachments/assets/846da345-53b4-4f82-8bd9-3a6cc4191145)
 copy the output for example on this attachment is hcLb WkD
+
 7. go to C:\Espressif\frameworks\esp-idf-v5.2.2\esp-skainet\examples\en_speech_commands_recognition>
 ```
 idf.py fullclean
