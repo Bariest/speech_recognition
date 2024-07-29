@@ -65,8 +65,8 @@ Customize the sound from ESP Speech Recognition to customize the wake word
 6. To custom or add a new word go back to C:\Espressif\frameworks\esp-idf-v5.2.2\esp-skainet\components\esp-sr\tool
 ```
 pip install g2p_en
-pip install numpy 
-pip install pandas
+python -m pip install numpy 
+python -m pip install pandas
 python multinet_g2p.py -t "...." (... = English words that you want to add)
 ```
 ![image](https://github.com/user-attachments/assets/846da345-53b4-4f82-8bd9-3a6cc4191145)
