@@ -20,7 +20,7 @@ git clone --branch ESP32-S3-Devkit-C --recursive https://github.com/Bariest/spee
 1. Set your I2s microphone settings 
 
 ```
-cd esp-skainet/components/hardware_driver/boards/include
+cd speech_recognition/components/hardware_driver/boards/include
 ```
 
 Open the file, 'esp32_s3_devkit_c.h'
